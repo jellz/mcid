@@ -18,8 +18,15 @@ export class RedisUtil {
 		this.client.config('SET', 'save', '120 1');
 	}
 
-	async getPlayerCode(uuid: string): Promise<PlayerCodeValue | null> {
+	async getCodeByPlayer(uuid: string): Promise<PlayerCodeValue | null> {
 		const json = await this.client.get(`player_code:${uuid}`);
+		if (!json) return null;
+
+		return JSON.parse(json);
+	}
+
+	async getPlayerByCode(code: string): Promise<PlayerCodeValue | null> {
+		const json = await this.client.get(`code_player:${code}`);
 		if (!json) return null;
 
 		return JSON.parse(json);
@@ -27,6 +34,10 @@ export class RedisUtil {
 
 	async setPlayerCode(uuid: string, value: PlayerCodeValue) {
 		await this.newCodeGeneratedAnalytics();
+		await this.client.set(`code_player:${value.code}`, JSON.stringify(value), [
+			'PX',
+			value.expiry - value.created,
+		]);
 		return await this.client.set(`player_code:${uuid}`, JSON.stringify(value), [
 			'PX',
 			value.expiry - value.created,
@@ -39,5 +50,17 @@ export class RedisUtil {
 			'analytics:last_code_generated_time',
 			Date.now().toString()
 		);
+	}
+
+	async deleteCode(code: string) {
+		const value = await this.getPlayerByCode(code);
+		if (!value) return null;
+
+		await this.client.del(
+			`player_code:${value.uuid}`,
+			`code_player:${value.code}`
+		);
+
+		return value;
 	}
 }

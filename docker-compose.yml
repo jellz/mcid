@@ -1,13 +1,14 @@
 version: '3.7'
 
 services:
-  minecraft:
+  app:
     tty: true
-    build: './minecraft'
+    build: './'
     environment:
       - REDIS_URL=redis://redis:6379
     ports:
       - '25566:25565'
+      - '3000:3000'
   redis:
     image: 'redis:alpine'
     ports:
