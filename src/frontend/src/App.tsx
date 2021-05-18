@@ -37,10 +37,8 @@ function App() {
 					</div>
 
 					<div className='my-4'>
-						MCID is a free-to-use service for developers to easily authenticate
-						users with their Minecraft accounts. Potential use cases include{' '}
-						<span className='italic'>Login with Minecraft</span> systems and
-						linking Minecraft accounts to other identities.
+						MCID is an API for developers to easily authenticate external users
+						with their Minecraft accounts.
 					</div>
 					<div className='my-4'>
 						<h2 className='text-xl font-bold'>Why MCID?</h2>
