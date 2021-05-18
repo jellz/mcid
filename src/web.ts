@@ -10,7 +10,7 @@ export class Web {
 	constructor(redis: RedisUtil) {
 		this.redis = redis;
 		this.app.listen(this.PORT);
-		this.app.use('/api/verify/:code', this.verifyCode.bind(this));
+		this.app.post('/api/verify/:code', this.verifyCode.bind(this));
 		this.app.use(express.static(path.join(__dirname, 'frontend/build')));
 		this.app.get('*', (req, res) => {
 			res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
