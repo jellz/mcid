@@ -4,8 +4,12 @@ services:
   app:
     ports:
       - '25566:25565'
+    networks:
+      - myweb
+  redis:
+    networks:
+      - myweb
 
 networks:
-  default:
+  myweb:
     external: true
-    name: myweb
