@@ -6,6 +6,7 @@ services:
       - '25566:25565'
     networks:
       - myweb
+      - mcid
 
 networks:
   myweb:
