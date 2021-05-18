@@ -2,8 +2,6 @@ version: '3.3'
 
 services:
   app:
-    ports:
-      - '25566:25565'
     networks:
       - myweb
       - default
