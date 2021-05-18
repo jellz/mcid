@@ -106,7 +106,7 @@ export default function Demo() {
 											name='code'
 											id='code'
 											className='font-mono col-span-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md'
-											placeholder='funny-bear-73'
+											placeholder='funny-bear'
 											onChange={handleChange}
 											value={code}
 											onPaste={handlePaste}

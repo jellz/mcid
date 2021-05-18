@@ -85,7 +85,7 @@ function App() {
 						</code>
 						<h3 className='text-lg'>Example</h3>
 						<code className='text-lg'>
-							POST https://mcid.party/api/verify/funny-bear-73
+							POST https://mcid.party/api/verify/funny-bear
 						</code>
 						<br />
 						<br />
