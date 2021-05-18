@@ -10,6 +10,7 @@ COPY . .
 
 RUN yarn build
 WORKDIR /home/node/app/src/frontend
+RUN yarn
 RUN yarn dockerBuild
 WORKDIR /home/node/app
 
