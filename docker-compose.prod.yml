@@ -6,9 +6,10 @@ services:
       - '25566:25565'
     networks:
       - myweb
+      - default
   redis:
     networks:
-      - myweb
+      - default
 
 networks:
   myweb:
