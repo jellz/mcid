@@ -10,4 +10,3 @@ services:
 networks:
   myweb:
     external: true
-    name: myweb
