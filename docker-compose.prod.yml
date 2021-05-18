@@ -4,6 +4,8 @@ services:
   app:
     ports:
       - '25566:25565'
+    environment:
+      - REDIS_URL=redis://mcid_redis_1:6379
     networks:
       - myweb
 
