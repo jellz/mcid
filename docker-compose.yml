@@ -7,7 +7,7 @@ services:
     environment:
       - REDIS_URL=redis://redis:6379
     ports:
-      - '25566:25565'
+      - '25565:25565'
   redis:
     image: 'redis:alpine'
     ports:
