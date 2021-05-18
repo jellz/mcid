@@ -6,8 +6,9 @@ services:
       - '25566:25565'
     networks:
       - myweb
-      - mcid
+      - default
 
 networks:
   myweb:
     external: true
+  default:
