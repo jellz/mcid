@@ -1,8 +1,8 @@
 # 🔒 MCID
 
-MCID is a free & open-source service for developers to easily authenticate users with their Minecraft: Java Edition accounts. Potential use cases include _Login with Minecraft systems_ and linking Minecraft accounts to other identities.
+MCID is an API for developers to easily authenticate external users with their Minecraft: Java Edition accounts. This can be used to build _Login with Minecraft_ and other identity linking systems involving Minecraft accounts.
 
-This README will focus on development aspects of MCID, **[visit MCID's homepage](https://mcid.party)** for general information.
+This README will focus on developmental aspects of MCID, **[visit MCID's homepage](https://mcid.party)** for general information.
 
 - **Built with** TypeScript, Express, Redis & Mineflayer
 - **Data collection is limited** to temporary tokens (three minute expiry) and generalised analytics (# of total codes generated & time of last generation). All users are forgotten.
