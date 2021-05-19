@@ -10,7 +10,7 @@ This README will focus on developmental aspects of MCID, **[visit MCID's homepag
 
 ### Breakdown
 
-The MCID application runs in one Docker container, and depends on a Redis instance. The backend architecture can be broken down to three parts: the Minecraft server (using Mineflayer), the web server (using Express), and the Redis instance storing ephemeral data in between. The app also includes a React frontend (served by the web server), but this isn't necessary for using the service for authentication.
+The MCID application runs in one Docker container, and depends on a Redis instance. The backend architecture can be broken down to three parts: the Minecraft server (using node-minecraft-protocol), the web server (using Express), and the Redis instance storing ephemeral data in between. The app also includes a React frontend (served by the web server), but this isn't necessary for using the service for authentication.
 
 The Minecraft server generates codes upon connection and stores them in Redis, for the web server to verify when the API endpoint is called (see [API usage](https://mcid.party)).
 
