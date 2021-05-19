@@ -12,6 +12,7 @@ export class Web {
 		this.redis = redis;
 		this.app.use(cors());
 		this.app.post('/api/verify/:code', this.verifyCode.bind(this));
+		this.app.get('/api/analytics', this.analytics.bind(this));
 		this.app.use(express.static(path.join(__dirname, 'frontend/build')));
 		this.app.get('*', (req, res) => {
 			res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
@@ -33,5 +34,10 @@ export class Web {
 			uuid: value.uuid,
 			username: value.username,
 		});
+	}
+
+	async analytics(req: Request, res: Response) {
+		const analytics = await this.redis.getAnalytics();
+		return res.json(analytics);
 	}
 }

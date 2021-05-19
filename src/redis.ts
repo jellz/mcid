@@ -52,6 +52,21 @@ export class RedisUtil {
 		);
 	}
 
+	async getAnalytics() {
+		const totalCodesGenerated = await this.client.get(
+			'analytics:total_codes_generated'
+		);
+		const lastGeneratedTime = await this.client.get(
+			'analytics:last_code_generated_time'
+		);
+		return {
+			totalCodesGenerated: totalCodesGenerated
+				? parseInt(totalCodesGenerated)
+				: null,
+			lastGeneratedTime: lastGeneratedTime ? parseInt(lastGeneratedTime) : null,
+		};
+	}
+
 	async deleteCode(code: string) {
 		const value = await this.getPlayerByCode(code);
 		if (!value) return null;
