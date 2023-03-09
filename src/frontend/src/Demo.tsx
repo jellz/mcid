@@ -91,7 +91,7 @@ export default function Demo() {
 							<div className='max-w-3xl'>
 								<h4 className='text-center mb-2'>
 									Connect to <span className='font-semibold'>mcid.party</span>{' '}
-									(1.8-1.16.x) and enter the code you receive{' '}
+									(1.8-1.19.x) and enter the code you receive{' '}
 									<span className='text-sm italic'>
 										(note: the code will only work once)
 									</span>

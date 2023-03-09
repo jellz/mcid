@@ -23,7 +23,7 @@
 		"express": "^4.17.1",
 		"handy-redis": "^2.2.1",
 		"humanize-duration": "^3.25.2",
-		"minecraft-protocol": "^1.25.0",
+		"minecraft-protocol": "^1.41.1",
 		"redis": "^3.1.2"
 	}
 }
