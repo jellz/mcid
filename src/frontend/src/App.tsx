@@ -4,14 +4,14 @@ import Demo from './Demo';
 const whyPoints = [
 	'Free & open source',
 	'Easy to use',
-	'Supports 1.8 to 1.16.5',
+	'Supports 1.8 to 1.19.3',
 	'Minimal data collection',
 ];
 
 const usageSteps = [
 	<>
 		On your frontend, instruct the user to connect to the Minecraft server{' '}
-		<span className='font-semibold'>mcid.party</span> on 1.8-1.16.x
+		<span className='font-semibold'>mcid.party</span> on 1.8-1.19.x
 	</>,
 	<>Accept the user received code to your backend (through a form)</>,
 	<>

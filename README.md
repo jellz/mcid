@@ -6,7 +6,7 @@ This README will focus on developmental aspects of MCID, **[visit MCID's homepag
 
 - **Built with** TypeScript, Express, Redis & node-minecraft-protocol
 - **Data collection is limited** to temporary tokens (three minute expiry) and generalised analytics (# of total codes generated & time of last generation). All users are forgotten.
-- **Supports connections with Minecraft: Java Edition versions 1.8 - 1.16.5**
+- **Supports connections with Minecraft: Java Edition versions 1.8 - 1.19.3**
 
 ### Breakdown
 

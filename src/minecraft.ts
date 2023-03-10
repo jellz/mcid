@@ -13,17 +13,18 @@ export class Minecraft {
 		this.redis = redis;
 		this.server = this.create();
 		this.server.on('login', this.handleLogin.bind(this));
-		console.log('Minecraft server is listening for connections on port 25566');
+		console.log('Minecraft server is listening for connections on port 25565');
 	}
 
 	create() {
 		return createServer({
 			motd: '§6Connect to receive your one-use code!',
 			maxPlayers: 2,
+			version: false,
 			beforePing: (response, client, answerToPing) => {
 				const pingResponse = {
 					version: {
-						name: '1.8-1.16',
+						name: '1.8-1.19',
 						protocol: client.protocolVersion,
 					},
 					players: {
